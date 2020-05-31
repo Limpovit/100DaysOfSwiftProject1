@@ -27,15 +27,13 @@ class TableViewController: UITableViewController {
 
     }
     
-    // MARK: - Table view data source
-    
+    // MARK: - Table view data source    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return picturesArray.count
         
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -45,5 +43,11 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            vc.selectedImage = picturesArray[indexPath.row]
+            vc.title = "Picture \(indexPath.row + 1) of \(picturesArray.count)"
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
