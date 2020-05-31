@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Storm Viewer"        
+        title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         
@@ -29,7 +29,7 @@ class TableViewController: UITableViewController {
                 print(item)
             }
         }
-
+        picturesArray.sort()
     }
     
     // MARK: - Table view data source
