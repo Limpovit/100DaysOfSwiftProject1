@@ -9,6 +9,19 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+       @IBOutlet weak var pictureView: UIImageView!
+       var selectedImage: String?
+       
+       override func viewDidLoad() {
+           super.viewDidLoad()
+    
+           
+           navigationItem.largeTitleDisplayMode = .never
+           
+           if let imageToLoad = selectedImage {
+               pictureView.image = UIImage(named: imageToLoad)
+           }
+       }
 
 
 }
