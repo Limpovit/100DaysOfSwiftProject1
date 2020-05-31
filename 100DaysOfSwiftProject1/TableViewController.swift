@@ -15,6 +15,11 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Storm Viewer"        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -27,7 +32,7 @@ class TableViewController: UITableViewController {
 
     }
     
-    // MARK: - Table view data source    
+    // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
